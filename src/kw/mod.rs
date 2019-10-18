@@ -1,3 +1,5 @@
+#![cfg(not(feature = "vendored"))]
+
 use crate::cipher::raw::CipherId;
 use crate::error::{IntoResult, Result};
 
