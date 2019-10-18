@@ -20,7 +20,7 @@ keywords = ["MbedTLS","mbed","TLS","SSL","cryptography"]
 core_io = { version = "0.1", features = ["collections"], optional = true }
 spin = { version = "0.5.2", default-features = false, optional = true }
 #mbedtls-sys = { git = "https://github.com/rust-mbedtls/mbedtls-sys" }
-mbedtls-sys = { path = "../mbedtls-sys", branch = "test-src-crate" }
+mbedtls-sys = { path = "../mbedtls-sys" }
 serde = { version = "1.0.101", default-features = false }
 yasna = { version = "0.3.1", optional = true }
 serde_derive = "1.0.101"
@@ -37,12 +37,13 @@ hex = "0.3"
 
 [features]
 # Features are documented in the README
-default = ["std"]
+#default = ["std"]
 std = ["serde/std"]
 threading = []
 pthread = ["threading","std"]
 spin_threading = ["threading","spin"]
-sgx = ["std", "rust_threading", "rdrand"]
+#sgx = ["std", "rust_threading", "rdrand"]
+sgx = ["rdrand", "core_io"]
 rust_threading = ["threading", "std"]
 rdrand = []
 pkcs12 = ["yasna"]
@@ -51,15 +52,15 @@ self_test = []
 cmac = []
 vendored = ["mbedtls-sys/vendored"]
 
-[[example]]
-name = "client"
-path = "examples/client.rs"
-required-features = ["std"]
+#[[example]]
+#name = "client"
+#path = "examples/client.rs"
+#required-features = ["std"]
 
-[[example]]
-name = "server"
-path = "examples/server.rs"
-required-features = ["std"]
+#[[example]]
+#name = "server"
+#path = "examples/server.rs"
+#required-features = ["std"]
 
 #[[test]]
 #name = "client_server"
