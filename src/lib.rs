@@ -57,7 +57,7 @@ pub mod hash;
 pub mod kw;
 pub mod pk;
 pub mod rng;
-pub mod self_test;
+//pub mod self_test;
 pub mod ssl;
 pub mod x509;
 

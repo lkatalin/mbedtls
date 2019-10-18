@@ -19,7 +19,8 @@ keywords = ["MbedTLS","mbed","TLS","SSL","cryptography"]
 [dependencies]
 core_io = { version = "0.1", features = ["collections"], optional = true }
 spin = { version = "0.5.2", default-features = false, optional = true }
-mbedtls-sys = { git = "https://github.com/rust-mbedtls/mbedtls-sys" }
+#mbedtls-sys = { git = "https://github.com/rust-mbedtls/mbedtls-sys" }
+mbedtls-sys = { path = "../mbedtls-sys", branch = "test-src-crate" }
 serde = { version = "1.0.101", default-features = false }
 yasna = { version = "0.3.1", optional = true }
 serde_derive = "1.0.101"
@@ -48,6 +49,7 @@ pkcs12 = ["yasna"]
 kw = []
 self_test = []
 cmac = []
+vendored = ["mbedtls-sys/vendored"]
 
 [[example]]
 name = "client"
@@ -59,37 +61,37 @@ name = "server"
 path = "examples/server.rs"
 required-features = ["std"]
 
-[[test]]
-name = "client_server"
-path = "tests/client_server.rs"
-required-features = ["std"]
-
-[[test]]
-name = "ec"
-path = "tests/ec.rs"
-
-[[test]]
-name = "pbkdf"
-path = "tests/pbkdf.rs"
-
-[[test]]
-name = "mbedtls_self_tests"
-path = "tests/mbedtls_self_tests.rs"
-required-features = ["self_test"]
-
-[[test]]
-name = "bignum"
-path = "tests/bignum.rs"
-
-[[test]]
-name = "rsa"
-path = "tests/rsa.rs"
-
-[[test]]
-name = "save_restore"
-path = "tests/save_restore.rs"
-
-[[test]]
-name = "ssl_conf_verify"
-path = "tests/ssl_conf_verify.rs"
-required-features = ["std"]
+#[[test]]
+#name = "client_server"
+#path = "tests/client_server.rs"
+#required-features = ["std"]
+#
+#[[test]]
+#name = "ec"
+#path = "tests/ec.rs"
+#
+#[[test]]
+#name = "pbkdf"
+#path = "tests/pbkdf.rs"
+#
+#[[test]]
+#name = "mbedtls_self_tests"
+#path = "tests/mbedtls_self_tests.rs"
+#required-features = ["self_test"]
+#
+#[[test]]
+#name = "bignum"
+#path = "tests/bignum.rs"
+#
+#[[test]]
+#name = "rsa"
+#path = "tests/rsa.rs"
+#
+#[[test]]
+#name = "save_restore"
+#path = "tests/save_restore.rs"
+#
+#[[test]]
+#name = "ssl_conf_verify"
+#path = "tests/ssl_conf_verify.rs"
+#required-features = ["std"]
