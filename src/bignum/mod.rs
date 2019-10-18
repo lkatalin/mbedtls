@@ -1,4 +1,3 @@
-#![cfg(not(feature = "vendored"))]
 
 /* Copyright (c) Fortanix, Inc.
  *
