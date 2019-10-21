@@ -17,7 +17,7 @@ documentation = "https://docs.rs/mbedtls/"
 keywords = ["MbedTLS","mbed","TLS","SSL","cryptography"]
 
 [dependencies]
-core_io = { version = "0.1", features = ["collections"], optional = true }
+#core_io = { version = "0.1", features = ["collections"], optional = true }
 spin = { version = "0.5.2", default-features = false, optional = true }
 mbedtls-sys = { git = "https://github.com/lkatalin/mbedtls-sys", branch = "test-src-vendored", rev = "308aba25beae81f146abdcf33fbf32d147dd45df" }
 #mbedtls-sys = { path = "../mbedtls-sys" }

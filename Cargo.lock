@@ -145,14 +145,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "core_io"
-version = "0.1.20190701"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-dependencies = [
- "rustc_version 0.1.7 (registry+https://github.com/rust-lang/crates.io-index)",
-]
-
-[[package]]
 name = "env_logger"
 version = "0.6.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -247,7 +239,6 @@ dependencies = [
  "bitflags 1.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "byteorder 1.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "chrono 0.4.9 (registry+https://github.com/rust-lang/crates.io-index)",
- "core_io 0.1.20190701 (registry+https://github.com/rust-lang/crates.io-index)",
  "hex 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.2.62 (registry+https://github.com/rust-lang/crates.io-index)",
  "mbedtls-sys 0.1.0 (git+https://github.com/lkatalin/mbedtls-sys?branch=test-src-vendored)",
@@ -424,19 +415,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "rustc-demangle"
 version = "0.1.16"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-
-[[package]]
-name = "rustc_version"
-version = "0.1.7"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-dependencies = [
- "semver 0.1.20 (registry+https://github.com/rust-lang/crates.io-index)",
-]
-
-[[package]]
-name = "semver"
-version = "0.1.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
@@ -620,7 +598,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum chrono 0.4.9 (registry+https://github.com/rust-lang/crates.io-index)" = "e8493056968583b0193c1bb04d6f7684586f3726992d6c573261941a895dbd68"
 "checksum clang-sys 0.28.1 (registry+https://github.com/rust-lang/crates.io-index)" = "81de550971c976f176130da4b2978d3b524eaa0fd9ac31f3ceb5ae1231fb4853"
 "checksum clap 2.33.0 (registry+https://github.com/rust-lang/crates.io-index)" = "5067f5bb2d80ef5d68b4c87db81601f0b75bca627bc2ef76b141d7b846a3c6d9"
-"checksum core_io 0.1.20190701 (registry+https://github.com/rust-lang/crates.io-index)" = "bb3b45b225c233ea8b95309256e842264692c68eeb543e06755de9072dd1178a"
 "checksum env_logger 0.6.2 (registry+https://github.com/rust-lang/crates.io-index)" = "aafcde04e90a5226a6443b7aabdb016ba2f8307c847d524724bd9b346dd1a2d3"
 "checksum failure 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)" = "795bd83d3abeb9220f257e597aa0080a508b27533824adf336529648f6abf7e2"
 "checksum fxhash 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "c31b6d751ae2c7f11320402d34e41349dd1016f8d5d45e48c4312bc8625af50c"
@@ -655,8 +632,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum regex 1.3.1 (registry+https://github.com/rust-lang/crates.io-index)" = "dc220bd33bdce8f093101afe22a037b8eb0e5af33592e6a9caafff0d4cb81cbd"
 "checksum regex-syntax 0.6.12 (registry+https://github.com/rust-lang/crates.io-index)" = "11a7e20d1cce64ef2fed88b66d347f88bd9babb82845b2b858f3edbf59a4f716"
 "checksum rustc-demangle 0.1.16 (registry+https://github.com/rust-lang/crates.io-index)" = "4c691c0e608126e00913e33f0ccf3727d5fc84573623b8d65b2df340b5201783"
-"checksum rustc_version 0.1.7 (registry+https://github.com/rust-lang/crates.io-index)" = "c5f5376ea5e30ce23c03eb77cbe4962b988deead10910c372b226388b594c084"
-"checksum semver 0.1.20 (registry+https://github.com/rust-lang/crates.io-index)" = "d4f410fedcf71af0345d7607d246e7ad15faaadd49d240ee3b24e5dc21a820ac"
 "checksum serde 1.0.101 (registry+https://github.com/rust-lang/crates.io-index)" = "9796c9b7ba2ffe7a9ce53c2287dfc48080f4b2b362fcc245a259b3a7201119dd"
 "checksum serde_cbor 0.10.1 (registry+https://github.com/rust-lang/crates.io-index)" = "318690c4f04ae6553665f3846c0614c9995bb1ea51a2f1c5c4b4ed338c248b49"
 "checksum serde_derive 1.0.101 (registry+https://github.com/rust-lang/crates.io-index)" = "4b133a43a1ecd55d4086bd5b4dc6c1751c68b1bfbeba7a5040442022c7e7c02e"

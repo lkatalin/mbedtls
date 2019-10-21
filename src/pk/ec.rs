@@ -117,6 +117,11 @@ mod tests {
     use crate::pk::Pk;
 
     #[test]
+    fn testme() {
+        let _ = 5;
+    }
+
+    #[test]
     fn p192_dh() {
         // From NIST CAVS 14.1, ECC CDH Primitive (SP800-56A Section 5.7.1.2),
         // Generated on Mon Nov 19 10:52:17 2012. Curve P-192, test vector

@@ -45,49 +45,49 @@ fn rdrand() -> Option<usize> {
     call_cpu_rng(RDRAND_READ_ATTEMPTS, _rdrand_step, |x| x as usize)
 }
 
-fn rdseed() -> Option<usize> {
-    call_cpu_rng(RDSEED_READ_ATTEMPTS, _rdseed_step, |x| x as usize)
-}
-
-fn write_rng_to_slice(outbuf: &mut [u8], rng: fn() -> Option<usize>) -> c_int {
-    let stepsize = core::mem::size_of::<usize>();
-
-    for chunk in outbuf.chunks_mut(stepsize) {
-        if let Some(val) = rng() {
-            let buf = val.to_ne_bytes();
-            let ptr = &buf[..chunk.len()];
-            chunk.copy_from_slice(ptr);
-        } else {
-            return ::mbedtls_sys::ERR_ENTROPY_SOURCE_FAILED;
-        }
-    }
-    0
-}
-
-use super::{EntropyCallback, RngCallback};
-
-pub struct Entropy;
-
-impl EntropyCallback for Entropy {
-    unsafe extern "C" fn call(_: *mut c_void, data: *mut c_uchar, len: size_t) -> c_int {
-        let mut outbuf = from_raw_parts_mut(data, len);
-        write_rng_to_slice(&mut outbuf, rdseed)
-    }
-
-    fn data_ptr(&mut self) -> *mut c_void {
-        ::core::ptr::null_mut()
-    }
-}
-
-pub struct Nrbg;
-
-impl RngCallback for Nrbg {
-    unsafe extern "C" fn call(_: *mut c_void, data: *mut c_uchar, len: size_t) -> c_int {
-        let mut outbuf = from_raw_parts_mut(data, len);
-        write_rng_to_slice(&mut outbuf, rdrand)
-    }
-
-    fn data_ptr(&mut self) -> *mut c_void {
-        ::core::ptr::null_mut()
-    }
-}
+//fn rdseed() -> Option<usize> {
+//    call_cpu_rng(RDSEED_READ_ATTEMPTS, _rdseed_step, |x| x as usize)
+//}
+//
+//fn write_rng_to_slice(outbuf: &mut [u8], rng: fn() -> Option<usize>) -> c_int {
+//    let stepsize = core::mem::size_of::<usize>();
+//
+//    for chunk in outbuf.chunks_mut(stepsize) {
+//        if let Some(val) = rng() {
+//            let buf = val.to_ne_bytes();
+//            let ptr = &buf[..chunk.len()];
+//            chunk.copy_from_slice(ptr);
+//        } else {
+//            return ::mbedtls_sys::ERR_ENTROPY_SOURCE_FAILED;
+//        }
+//    }
+//    0
+//}
+//
+//use super::{EntropyCallback, RngCallback};
+//
+//pub struct Entropy;
+//
+//impl EntropyCallback for Entropy {
+//    unsafe extern "C" fn call(_: *mut c_void, data: *mut c_uchar, len: size_t) -> c_int {
+//        let mut outbuf = from_raw_parts_mut(data, len);
+//        write_rng_to_slice(&mut outbuf, rdseed)
+//    }
+//
+//    fn data_ptr(&mut self) -> *mut c_void {
+//        ::core::ptr::null_mut()
+//    }
+//}
+//
+//pub struct Nrbg;
+//
+//impl RngCallback for Nrbg {
+//    unsafe extern "C" fn call(_: *mut c_void, data: *mut c_uchar, len: size_t) -> c_int {
+//        let mut outbuf = from_raw_parts_mut(data, len);
+//        write_rng_to_slice(&mut outbuf, rdrand)
+//    }
+//
+//    fn data_ptr(&mut self) -> *mut c_void {
+//        ::core::ptr::null_mut()
+//    }
+//}
