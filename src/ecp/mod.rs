@@ -13,7 +13,7 @@ use mbedtls_sys::*;
 #[cfg(not(feature = "std"))]
 use crate::alloc_prelude::*;
 
-//use crate::bignum::Mpi;
+use crate::bignum::Mpi;
 use crate::pk::EcGroupId;
 
 define!(
